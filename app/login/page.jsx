@@ -43,6 +43,7 @@ export default function LoginPage() {
     const result = await login(username, password);
 
     if (result.success) {
+      router.refresh();
       router.push('/');
     } else {
       setError(result.error || 'Login failed. Please try again.');

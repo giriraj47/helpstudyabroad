@@ -85,7 +85,7 @@ const useAuthStore = create((set) => ({
       // Set cookie for middleware
       document.cookie = `accessToken=${data.accessToken}; path=/; max-age=${60 * 60}`;
 
-      set({ user: userData, isAuthenticated: true, loading: false });
+      set({ user: userData, isAuthenticated: true, loading: false, error: null });
       return { success: true };
     } catch (err) {
       set({ error: err.message, loading: false, isAuthenticated: false });
